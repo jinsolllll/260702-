@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>궁전제과 브랜드 리브랜딩 포트폴리오</title>
+    <style>
+      /* 기본 리셋 및 스타일 */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Noto Sans KR", sans-serif;
+        background-color: #faf6f0; /* 전통적이고 따뜻한 미색 배경 */
+        color: #4a3e3d;
+        line-height: 1.6;
+      }
+
+      /* 상단 헤더 & 내비게이션 */
+      header {
+        background-color: #ffffff;
+        border-bottom: 1px solid #e0d5c1;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        display: table;
+        width: 100%;
+      }
+      .logo {
+        display: table-cell;
+        vertical-align: middle;
+        font-size: 18pt;
+        font-weight: bold;
+        color: #b35638; /* 로고 포인트 색상 */
+      }
+      .nav-links {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: right;
+      }
+      .nav-links a {
+        color: #4a3e3d;
+        text-decoration: none;
+        margin-left: 25px;
+        font-size: 11pt;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: #b35638;
+      }
+
+      /* 메인 히어로 섹션 */
+      .hero {
+        background-color: #f3eae1;
+        padding: 80px 20px;
+        text-align: center;
+        border-bottom: 1px solid #e0d5c1;
+      }
+      .hero h1 {
+        font-size: 24pt;
+        color: #2b2221;
+        margin-bottom: 15px;
+      }
+      .hero p {
+        font-size: 12pt;
+        color: #705f5d;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* 메인 콘텐츠 컨테이너 */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 60px 20px;
+      }
+
+      /* 섹션 타이틀 */
+      .section-title {
+        font-size: 18pt;
+        color: #2b2221;
+        margin-bottom: 30px;
+        border-left: 5px solid #b35638;
+        padding-left: 15px;
+      }
+
+      /* 프로젝트 개요 (Overview) */
+      .overview-grid {
+        display: table;
+        width: 100%;
+        margin-bottom: 60px;
+      }
+      .overview-cell {
+        display: table-cell;
+        width: 50%;
+        vertical-align: top;
+        padding-right: 40px;
+      }
+      .overview-cell:last-child {
+        padding-right: 0;
+        padding-left: 40px;
+        border-left: 1px solid #e0d5c1;
+      }
+      .overview-cell h3 {
+        font-size: 13pt;
+        margin-bottom: 12px;
+        color: #b35638;
+      }
+      .overview-cell p {
+        font-size: 10.5pt;
+        color: #5a4b49;
+        margin-bottom: 20px;
+      }
+
+      /* 포트폴리오 갤러리 레이아웃 */
+      .portfolio-gallery {
+        display: table;
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 20px;
+        margin-bottom: 40px;
+      }
+      .gallery-row {
+        display: table-row;
+      }
+      .gallery-item {
+        display: table-cell;
+        width: 50%;
+        background: #ffffff;
+        border: 1px solid #e0d5c1;
+        border-radius: 8px;
+        overflow: hidden;
+        vertical-align: top;
+        box-shadow: 0 4px 10px rgba(74, 62, 61, 0.05);
+      }
+      .gallery-item.full-width {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      .image-container {
+        width: 100%;
+        background-color: #fdfbf9;
+        text-align: center;
+        border-bottom: 1px solid #f0e6da;
+      }
+      .image-container img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+      .item-details {
+        padding: 25px;
+      }
+      .item-details h3 {
+        font-size: 13pt;
+        color: #2b2221;
+        margin-bottom: 10px;
+      }
+      .item-details p {
+        font-size: 10pt;
+        color: #705f5d;
+      }
+
+      /* 하단 푸터 */
+      footer {
+        background-color: #2b2221;
+        color: #a69593;
+        padding: 40px 20px;
+        text-align: center;
+        font-size: 9.5pt;
+        border-top: 3px solid #b35638;
+      }
+      footer p {
+        margin-bottom: 10px;
+      }
+
+      /* 미디어 쿼리 추가 */
+
+/* 1. 태블릿 및 중형 디바이스 (1024px 이하) */
+@media (max-width: 1024px) {
+  .overview-grid, .overview-cell {
+    display: block !important;
+    width: 100% !important;
+    padding: 0 !important;
+    border-left: none !important;
+  }
+  .overview-cell {
+    margin-bottom: 30px;
+  }
+}
+
+/* 2. 모바일 (768px 이하) */
+@media (max-width: 768px) {
+  .nav-container {
+    display: block;
+    text-align: center;
+  }
+  .logo, .nav-links {
+    display: block;
+    text-align: center;
+  }
+  .nav-links a {
+    margin: 0 10px;
+  }
+  
+  /* 갤러리 레이아웃 수직 정렬 */
+  .portfolio-gallery, .gallery-row, .gallery-item {
+    display: block !important;
+    width: 100% !important;
+  }
+  .gallery-item {
+    margin-bottom: 20px;
+  }
+}
+
+/* 3. 소형 모바일 (480px 이하) */
+@media (max-width: 480px) {
+  .hero h1 { font-size: 18pt; }
+  .section-title { font-size: 15pt; }
+  .item-details { padding: 15px; }
+}
+      
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="nav-container">
+        <div class="logo">PARK JIN SOL</div>
+        <div class="nav-links">
+          <a href="#overview">Overview</a>
+          <a href="#portfolio">Portfolio Work</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <h1>궁전제과 브랜드 리브랜딩 프로젝트</h1>
+      <p>
+        전통 디자인 요소와 디지털 일러스트레이션을 조화롭게 결합하여, 광주의
+        역사가 된 제과점의 전통을  현대적으로 재정립한
+        포트폴리오입니다.
+      </p>
+    </section>
+
+    <div class="container">
+      <section id="overview" style="margin-bottom: 60px">
+        <h2 class="section-title">Project Overview</h2>
+        <div class="overview-grid">
+          <div class="overview-cell">
+            <h3>CONCEPT & DIRECTION</h3>
+            <p>
+              1973년부터 이어져 온 대한민국 5대 빵집 '궁전제과'의 오랜 역사와
+              깊이를 전통 민화 스타일의 비주얼과 한국 고유의 다채로운 색채 미학을 담아내어 독창적으로 해석했습니다.
+            </p>
+            <p>
+           한국적인 선과 색을 활용하여 브랜드의 정체성을 현대적으로 정립했습니다.
+            시그니처 메뉴인 '공룡알빵'에서 영감을 받은 캐릭터는 전통적인 십장생의 풍경 속에 녹아들어 브랜드에 새로운 생명력을 불어넣습니다.
+            </p>
+          </div>
+          <div class="overview-cell">
+            <h3>PROJECT DETAILS</h3>
+            <p>
+              <strong>Design Type:</strong> Package Design, Brand Identity,
+              Character Design
+            </p>
+            <p><strong>Tools Used:</strong> Adobe Illustrator, Photoshop</p>
+            <p>
+              <strong>Key Elements:</strong>전통 십장생도 모티프
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio">
+        <h2 class="section-title">Portfolio Artifacts</h2>
+
+        <div class="gallery-item full-width">
+          <div class="image-container">
+            <img src="궁전제과 목업.jpg" alt="궁전제과 패키지 디자인 목업" />
+          </div>
+          <div class="item-details">
+            <h3>01. 브랜드 패키지 디자인 목업 (Package Design Mockup)</h3>
+            <p>
+              완성된 리브랜딩 그래픽 일러스트레이션을 실제 상품 패키지 박스에
+              적용한 3D 목업 시뮬레이션입니다. 전통적인 지함 구조에 차분한
+              바탕색과 질감을 더해 격조 높은 선물용 패키지의 느낌을 연출했으며,
+              측면에는 정갈한 타이포그래피와 아이콘을 정돈해 넣었습니다.
+            </p>
+          </div>
+        </div>
+
+        <section class="portfolio-gallery">
+  <!-- 1. 메인 그래픽 (독립된 한 블록) -->
+  <div class="gallery-item full-width">
+    <div class="image-container">
+      <img src="궁전제과 채색0.jpg" alt="궁전제과 메인 브랜드 BI 일러스트" />
+    </div>
+    <div class="item-details">
+      <h3>02. 메인 그래픽 일러스트 (Main Graphics)</h3>
+      <p>
+상단 타이틀 구성: 족자 형태의 프레임 속에 '궁전제과' 타이틀을 얹고, 하단에 '광주의 역사가 된 과자점'이라는 슬로건과 'SINCE 1973'을 배치하여 전통 있는 브랜드로서의 정체성과 자부심을 강조했습니다.
+
+전통적인 배경 연출: 기와지붕의 궁궐(또는 정자)과 소나무, 대나무, 바위, 그리고 구름과 해(달)를 배치하여 한국적인 풍경의 멋을 살렸습니다.
+
+친근한 캐릭터 배치: 전통적인 풍경 중심에 아기자기한 공룡 캐릭터 두 마리를 배치하여, 자칫 무거워질 수 있는 전통 일러스트에 위트와 현대적인 감각, 그리고 강한 주목성을 부여했습니다.
+
+화사한 오브제: 전면에 피어난 화려한 모란꽃(부귀영화를 상징)과 날아다니는 나비들을 통해 풍성하고 생기 넘치는 화면을 완성했습니다.</p>
+    </div>
+  </div>
+
+  <!-- 2. 나머지 두 개를 한 행으로 배치 -->
+  <div class="gallery-row" style="display: flex; gap: 20px;">
+    <!-- 브랜드 스토리 카드 -->
+    <div class="gallery-item" style="flex: 1;">
+      <div class="image-container">
+        <img src="궁전제과 채색1.jpg" alt="궁전제과 브랜드 스토리 카드" />
+      </div>
+      <div class="item-details">
+        <h3>03. 브랜드 스토리 카드 (Brand Story Card)</h3>
+        <p>패키지 측면을 활용하여, 소비자가 가정에서도 궁전제과 본연의 맛을 온전히 유지하고 즐길 수 있도록 돕는 실용적인 가이드를 구성했습니다. 밀봉, 냉동, 해동으로 이어지는 과정을 직관적인 라인 아이콘으로 도식화하고, 하단에 Q&A 섹션을 배치하여 정보 전달의 효율성을 극대화했습니다.</p>
+      </div>
+    </div>
+
+    <!-- 제품 안내 및 보관법 -->
+    <div class="gallery-item" style="flex: 1;">
+      <div class="image-container">
+        <img src="궁전제과 채색2.jpg" alt="궁전제과 빵 보관 방법 인포그래픽" />
+      </div>
+      <div class="item-details">
+        <h3>04. 제품 안내 및 보관법 가이드 (Care Infographic)</h3>
+        <p>소비자가 가정에서도 궁전제과 본연의 맛을 온전히 즐길 수 있도록 돕는 가이드입니다. 밀봉, 냉동, 해동으로 이어지는 과정을 직관적인 인라인 그래픽 아이콘으로 정리하고, 자주 묻는 질문(Q&A) 형식을 차용하여 실용적인 정보를 가독성 높게 구성했습니다. 브랜드의 통일감 있는 비주얼을 유지하면서 정보 전달의 효율성을 극대화하는 데 중점을 두었습니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <footer>
+      <p>&copy; 2026 Park Jin Sol. All Rights Reserved.</p>
+      <p>
+        본 페이지는 디자인 포트폴리오 소개 목적으로 구성되었으며, 모든 이미지의
+        저작권은 디자이너에게 있습니다.
+      </p>
+    </footer>
+  </body>
+</html>
